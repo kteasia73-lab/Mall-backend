@@ -2,20 +2,27 @@ services:
   - type: web
     name: mall-backend
     env: node
-    buildCommand: "yarn install"
-    startCommand: "node src/ server.js"
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+
     envVars:
       - key: MONGO_URI
-        value: ${mongodb.connectionString}
+        fromDatabase:
+          name: mall-db
+          property: connectionString
+
       - key: ADMIN_EMAIL
         value: "admin@mall.com"
+
       - key: ADMIN_PASSWORD
         value: "MallAdmin123"
+
       - key: JWT_SECRET
         generateValue: true
-    autoDeploy: true
+
     plan: free
 
 databases:
   - name: mall-db
     databaseName: mall
+

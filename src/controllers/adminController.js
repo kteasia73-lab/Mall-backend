@@ -2,7 +2,7 @@ import Admin from "../models/Admin.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
-// Create Admin
+// Create login
 export const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;

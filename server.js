@@ -20,7 +20,8 @@ connectDB();
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/merchant", merchantRoutes);
-
+app.use("/api/mall", mallRoutes);
+  
 app.get("/", (req, res) => {
   res.send("Mall Backend Running Successfully!");
 });

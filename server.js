@@ -6,6 +6,7 @@ import connectDB from "./src/config/db.js";
 
 import adminRoutes from "./src/routes/adminRoutes.js";
 import merchantRoutes from "./src/routes/merchantRoutes.js";
+import mallRoutes from "./src/routes/mallRoutes.js";
 
 dotenv.config();
 const app = express();

@@ -1,19 +1,12 @@
-
-// src/routes/adminRoutes.js
 import express from "express";
-import {
-  loginAdmin,
-  getAdmins,
-} from "../controllers/adminController.js";
-import { requireAdmin } from "../middleware/authMiddleware.js";
+import { loginAdmin, createAdmin } from "../controllers/adminController.js";
 
 const router = express.Router();
 
-// Public (for now – you may later lock createAdmin)
+// Admin login
 router.post("/login", loginAdmin);
 
-// Protected – only logged-in admins can see admin list
-router.get("/", requireAdmin, getAdmins);
+// TEMPORARY: Create admin account
+router.post("/create", createAdmin);
 
 export default router;
-
